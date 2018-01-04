@@ -16,6 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from bookmark.views import BookmarkLV, BookmarkDV #뷰를 호출해야하니 뷰에서 쓰일 클래스를 import
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    #regex로 URL을 정의해주고 어떤 view로 넘길지 연결해준다
+    url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
+    url(r'^bookmark/(?P<pk>\d+)$', BookmarkDV.as_view(), name='detail'),
 ]
