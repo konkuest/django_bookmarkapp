@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'mark'
 ]
 
@@ -69,6 +70,9 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_LOADERS = [
+    'django.template.loaders.app_directories.load_template_source'
+]
 
 
 WSGI_APPLICATION = 'bookmark.wsgi.application'
